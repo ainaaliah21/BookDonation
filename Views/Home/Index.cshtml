@@ -1,0 +1,135 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+        overflow-x: hidden;
+        background-color: #f8e6e0; /* Soft pink background */
+    }
+
+    /* Full-page container */
+    .main-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 20px;
+    }
+
+    /* Content container with white background */
+    .content-container {
+        display: flex;
+        background-color: white; /* White background */
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        overflow: hidden; /* Ensures image doesn't overflow the container */
+        max-width: 2500px; /* Increased max-width for wider rectangle */
+        width: 90%; /* Makes it responsive to smaller screens */
+        margin-top: -100px; /* Move the content container upwards */
+    }
+
+    /* Left Section: Image */
+    .left-section {
+        flex: 1; /* Take half the container */
+    }
+
+        .left-section img {
+            width: 100%; /* Ensure image takes full width of its container */
+            height: 100%; /* Cover full height */
+            object-fit: cover; /* Maintain aspect ratio while covering */
+        }
+
+    /* Right Section: Content */
+    .right-section {
+        flex: 1; /* Take half the container */
+        padding: 50px; /* Add more spacing inside */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+    }
+
+        .right-section h1 {
+            font-size: 2.7rem; /* Slightly larger title */
+            font-weight: bold;
+            color: #6a1f1f; /* Coral color */
+            margin-bottom: 25px;
+        }
+
+        .right-section p {
+            font-size: 1.3rem; /* Slightly larger text */
+            color: #6a1f1f; /* Coral color */
+            line-height: 1.6;
+            margin-bottom: 35px;
+        }
+
+    /* Button container styles */
+    .button-container {
+        display: flex;
+        gap: 20px; /* Increased spacing between buttons */
+        padding: 20px;
+        border-radius: 10px; /* Round the corners of the container */
+    }
+
+        /* Button styles */
+        .button-container a {
+            text-decoration: none;
+            padding: 15px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: white;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+            .button-container a.donate {
+                background-color: #FFB6C1; /* Soft red */
+            }
+
+                .button-container a.donate:hover {
+                    background-color: #FFB6C1; /* Darker red */
+                }
+
+            .button-container a.view {
+                background-color: #FFB6C1; /* Soft green */
+            }
+
+                .button-container a.view:hover {
+                    background-color: #FFB6C1; /* Darker green */
+                }
+
+            .button-container a.create {
+                background-color: #FFB6C1; /* Soft blue */
+            }
+
+                .button-container a.create:hover {
+                    background-color: #FFB6C1; /* Darker blue */
+                }
+</style>
+
+<div class="main-container">
+    <!-- Content Container -->
+    <div class="content-container">
+        <!-- Left Section: Image -->
+        <div class="left-section">
+            <img src="/img/img4.jpg" alt="Books and Leaves Illustration">
+        </div>
+
+        <!-- Right Section: Content -->
+        <div class="right-section">
+            <h1>Welcome to Book Donation System</h1>
+            <p>Help us create a world of endless possibilities by sharing knowledge through books. Your donation can change lives.</p>
+
+            <!-- Buttons -->
+            <div class="button-container">
+                <a href="/Donors/Create" class="donate">Become a Donor</a>
+                <a href="/Books/Create" class="create">Donate a Book</a>
+                <a href="/Books" class="view">View Available Books</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+﻿@{
+    ViewData["Title"] = "About Us";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BookDonorsAPI</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body style="background-color: #f8e6e0;">
+    <!-- Soft Pink Background -->
+
+    <div class="container py-5">
+        <!-- Main Title -->
+        <h1 class="text-center" style="font-weight: bold; color: #6a1f1f;">About Us</h1>
+
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <!-- Introduction -->
+                <p class="text-center mb-4" style="font-size: 1.2rem; color: #6a1f1f;">
+                    BookDonorsAPI is a platform dedicated to connecting generous book donors with those in need of books. Our mission is to share knowledge, and make education accessible to all.
+                </p>
+
+                <!-- Our Mission Section -->
+                <div class="mb-5 text-center">
+                    <h3 class="fw-bold" style="color: #6a1f1f;">Our Mission</h3>
+                    <p style="color: #6a1f1f;">
+                        We aim to provide easy access to educational resources by connecting people who are willing to donate books with those who need them. Together, we can create a world where knowledge is shared and everyone has the opportunity to learn.
+                    </p>
+                </div>
+
+                <!-- Our Story Section -->
+                <div class="mb-5 text-center">
+                    <h3 class="fw-bold" style="color: #6a1f1f;">Our Story</h3>
+                    <p style="color: #6a1f1f;">
+                        Founded with a passion for spreading knowledge, BookDonorsAPI connects book donors to various charitable organizations and schools. We strive to ensure that no book goes to waste and every book finds a new home where it can make a difference.
+                    </p>
+                </div>
+
+                <!-- Call to Action: Become a Donor -->
+                <div class="text-center mb-4">
+                    <p style="font-size: 1.2rem; color: #6a1f1f;">
+                        Join us in our mission to share knowledge and empower individuals through book donations.
+                    </p>
+                    <a href="/Donors/Create" class="btn" style="background-color: #FFB6C1; color: white; font-weight: bold; padding: 10px 30px; border-radius: 8px;">Become a Donor</a>
+                </div>
+
+                <!-- Simple Footer Text -->
+                <div class="text-center">
+                    <p style="color: #6a1f1f;">Thank you for being a part of our journey. Together, we are making a difference!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+﻿@{
+    ViewData["Title"] = "FAQ";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BookDonorsAPI</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <style>
+        body {
+            background-color: #f8e6e0; /* Soft pink background */
+        }
+
+        /* FAQ Container */
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #6a1f1f;
+            font-weight: bold;
+        }
+
+        .faq-item {
+            background-color: white;
+            margin: 15px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+            position: relative; /* Needed for positioning images */
+        }
+
+            .faq-item h3 {
+                font-size: 1.5rem;
+                color: #6a1f1f;
+                cursor: pointer;
+                margin-bottom: 10px;
+                transition: color 0.3s ease; /* Transition on hover */
+            }
+
+            .faq-item p {
+                font-size: 1rem;
+                color: #6a1f1f;
+                display: none;
+            }
+
+            /* Hover effect for question */
+            .faq-item:hover {
+                background-color: #fddde6; /* Light pink on hover */
+                color: #e74c3c; /* Darker text color */
+            }
+
+                .faq-item:hover h3 {
+                    color: #e74c3c; /* Darker text color on hover */
+                }
+
+                .faq-item:hover p {
+                    display: block;
+                }
+
+            /* Decorative Images */
+            .faq-item .decorative-img-left,
+            .faq-item .decorative-img-right {
+                display: none;
+                width: 100px; /* Adjust size as needed */
+                height: auto;
+                margin-top: 20px;
+                opacity: 1;
+            }
+
+            /* Show images on hover */
+            .faq-item:hover .decorative-img-left,
+            .faq-item:hover .decorative-img-right {
+                display: inline-block; /* Display images below when hovered */
+            }
+
+            .faq-item .decorative-img-left {
+                float: left;
+                margin-right: 20px;
+            }
+
+            .faq-item .decorative-img-right {
+                float: right;
+                margin-left: 20px;
+            }
+
+    </style>
+</head>
+<body>
+    <div class="container faq-container">
+        <h1>Frequently Asked Questions</h1>
+
+        <!-- FAQ 1 -->
+        <div class="faq-item">
+            <h3>What is BookDonorsAPI?</h3>
+            <p>BookDonorsAPI is a platform that connects book donors with organizations and individuals in need of books. Our goal is to make books accessible to everyone by facilitating donations.</p>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item">
+            <h3>How can I donate a book?</h3>
+            <p>You can donate a book by signing up as a donor on our platform, providing the details of the book, and choosing a recipient or organization you'd like to donate it to.</p>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item">
+            <h3>How do I become a donor?</h3>
+            <p>Becoming a donor is easy! Just visit our "Become a Donor" page, create an account, and you'll be able to donate books to various recipients.</p>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item">
+            <h3>What is the impact of donating books?</h3>
+            <p>Donating books helps spread knowledge and learning to those who may not have access to educational resources. Your donation can make a significant difference in someone's life.</p>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="faq-item">
+            <h3>Can I request a specific book?</h3>
+            <p>Yes, you can request specific books through our platform, and we will do our best to connect you with a donor who can fulfill your request.</p>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>

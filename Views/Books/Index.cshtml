@@ -1,0 +1,131 @@
+﻿@model IEnumerable<BookDonorsAPI.Models.Book>
+
+@{
+    ViewData["Title"] = "Books List";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BookDonorsAPI</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <style>
+        body {
+            background-color: #fce4ec; /* Light Pink Background */
+        }
+
+        .container {
+            max-width: 900px;
+            margin-top: 50px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #d81b60; /* Pink Color */
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            font-size: 1rem;
+            border: 1px solid #f48fb1; /* Light Pink Borders */
+        }
+
+        th {
+            background-color: #f06292; /* Soft Pink */
+            color: white;
+        }
+
+        td {
+            background-color: #fce4ec; /* Lighter Pink for Rows */
+            color: #4a4a4a; /* Neutral Text Color */
+        }
+
+        .btn {
+            background-color: #f06292; /* Soft Pink */
+            color: white;
+            font-weight: bold;
+            padding: 8px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+            .btn:hover {
+                background-color: #f48fb1; /* Slightly Darker Pink on Hover */
+            }
+
+        .add-book-btn {
+            background-color: #f06292;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin-top: 30px; /* Added extra spacing from the table */
+            display: block;
+            text-align: center;
+            width: 200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+            .add-book-btn:hover {
+                background-color: #f48fb1;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Books List</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Genre</th>
+                    <th>Year Published</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var book in Model)
+                {
+                    <tr>
+                        <td>@book.Tittle</td>
+                        <td>@book.Author</td>
+                        <td>@book.Genre</td>
+                        <td>@book.YearPublished</td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@book.ID" class="btn">Edit</a>
+                            <a asp-action="Delete" asp-route-id="@book.ID" class="btn">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <!-- Add New Book Button -->
+        <a asp-action="Create" class="add-book-btn">Add New Book</a>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>

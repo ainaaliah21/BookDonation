@@ -1,0 +1,125 @@
+﻿@model IEnumerable<BookDonorsAPI.Models.Donor>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donors List</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <style>
+        body {
+            background-color: #fce4ec; /* Light Pink Background */
+        }
+
+        .container {
+            max-width: 900px;
+            margin-top: 50px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #d81b60; /* Pink Color */
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            font-size: 1rem;
+            border: 1px solid #f48fb1; /* Light Pink Borders */
+        }
+
+        th {
+            background-color: #f06292; /* Soft Pink */
+            color: white;
+        }
+
+        td {
+            background-color: #fce4ec; /* Lighter Pink for Rows */
+            color: #4a4a4a; /* Neutral Text Color */
+        }
+
+        .btn {
+            background-color: #f06292; /* Soft Pink */
+            color: white;
+            font-weight: bold;
+            padding: 8px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .btn:hover {
+            background-color: #f48fb1; /* Slightly Darker Pink on Hover */
+        }
+
+        .add-donor-btn {
+            background-color: #f06292;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin-top: 30px; /* Extra Spacing from the Table */
+            display: block;
+            text-align: center;
+            width: 200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .add-donor-btn:hover {
+            background-color: #f48fb1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Donors List</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Donor Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Book Title</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var donor in Model)
+                {
+                    <tr>
+                        <td>@donor.Name</td>
+                        <td>@donor.Email</td>
+                        <td>@donor.Phone</td>
+                        <td>@donor.BookTittle</td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@donor.DonorID" class="btn">Edit</a>
+                            <a asp-action="Delete" asp-route-id="@donor.DonorID" class="btn">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <!-- Add New Donor Button -->
+        <a asp-action="Create" class="add-donor-btn">Add New Donor</a>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
